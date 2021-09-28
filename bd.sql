@@ -28,23 +28,70 @@ ValorExamen( FK(tipoExamen),valor)
 Observaciones( FK(tipoExamen),observacion)
 		foreing key tipoExamen referencia a tipoExamen en ExamenMedico
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+create table Paciente(
+	cedula varchar(10),
+	fechaNacimiento date,
+	POS varchar(5),
+	telefonoContacto varchar(10),
+	cedulaContacto varchar(10),
+		primary key (cedula),
+			foreign key (cedulaContacto) references Contacto(cedulaContacto)
+);
+create table Contacto(
+	cedulaContacto varchar(10),
+	nombreContacto varchar(20),
+	telefonoContacto varchar(10),
+		primary key (cedulaContacto)
+);
+create table pacienteOrden(
+	cedula varchar(10),
+	consecutivoOrden int,
+		foreign key (cedula) references Paciente(cedula),
+		foreign key (consecutivoOrden) references ordenMedica(consecutivo)
+);
+create table Factura(
+	numFactura int,
+	valor float,
+	fechaRealizacion date,
+	cedulaPaciente varchar(10),
+		foreign key (cedulaPaciente) references Paciente(cedula)
+);
+create table ordenMedica(
+	consecutivo serial int,
+	fechaIngreso date default now,
+	medicoTratante varchar(10),
+	numeroOrden int,
+	fechaSolicitud date,
+		foreign key (medicoTratante) references Medico(cedula)
+);
+create table Medico(
+	cedula varchar(10),
+	nombre varchar(20),
+	apellido varchar(20),
+	telefono varchar(12),
+	direcicon varchar(40),
+	especialidad varchar(10),
+		primary key (cedula)
+);
+create table examenMedico(
+	tipoExamen varchar(40),
+	fechaCita date,
+	fechaRealizacion date,
+	consecutivoOrden serial int,
+		primary key (tipoExamen),
+		foreign key (consecutivoOrden) references ordenMedica(consecutivo)
+);
+valorExamen(
+	tipoExamen varchar(40),
+	valor,
+		unique(tipoExamen),
+		foreign key (tipoExamen) references examenMedico(tipoExamen)
+);
+Observaciones(
+	tipoExamen varchar(40),
+	observacion varchar(256)
+		foreign key (tipoExamen) references examenMedico(tipoExamen)
+);
 
 
 
@@ -61,42 +108,5 @@ Observaciones( FK(tipoExamen),observacion)
 --También se requiere tener información de un paciente en particular (por número de cédula), qué exámenes se realizó y con fecha de realización.
 
 --Para una fecha particular se necesita saber los exámenes que hay pendientes con datos del paciente.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
