@@ -28,6 +28,9 @@ ValorExamen( FK(tipoExamen),valor)
 Observaciones( FK(tipoExamen),observacion)
 		foreing key tipoExamen referencia a tipoExamen en ExamenMedico
 */
+
+create type estado as enum ('pendiente','terminado','cancelado') set default 'pendiente';
+
 create table Paciente(
 	cedula varchar(10),
 	fechaNacimiento date,
@@ -45,15 +48,16 @@ create table Contacto(
 );
 create table pacienteOrden(
 	cedula varchar(10),
-	consecutivoOrden int,
+	numeroOrden int,
 		foreign key (cedula) references Paciente(cedula),
-		foreign key (consecutivoOrden) references ordenMedica(consecutivo)
+		foreign key (numeroOrden) references ordenMedica(numeroOrden)
 );
 create table Factura(
 	numFactura int,
 	valor float,
 	fechaRealizacion date,
 	cedulaPaciente varchar(10),
+	estadoFactura estado,
 		foreign key (cedulaPaciente) references Paciente(cedula)
 );
 create table ordenMedica(
@@ -62,6 +66,8 @@ create table ordenMedica(
 	medicoTratante varchar(10),
 	numeroOrden int,
 	fechaSolicitud date,
+	estadoOrden estado,
+		primary key (numeroOrden),
 		foreign key (medicoTratante) references Medico(cedula)
 );
 create table Medico(
@@ -77,9 +83,10 @@ create table examenMedico(
 	tipoExamen varchar(40),
 	fechaCita date,
 	fechaRealizacion date,
-	consecutivoOrden serial int,
+	numeroOrden int,
+	estadoExamen estado,
 		primary key (tipoExamen),
-		foreign key (consecutivoOrden) references ordenMedica(consecutivo)
+			foreign key (numeroOrden) references ordenMedica(numeroOrden)
 );
 valorExamen(
 	tipoExamen varchar(40),

@@ -1,0 +1,28 @@
+ Esquema Relacional
+
+Paciente( PK(Cedula),fechaNacimiento,POS,telefonoContacto, FK(cedulaContacto))
+		foreign key cedulaContacto REFERENCIA A cedulaContacto en Contacto
+	
+Contacto( PK(cedulaContacto),nombreContacto,telefonoContacto)
+
+pacienteOrden(FK(cedula),FK(numeroOrden))
+		foreign key cedula referencia a cedula en Paciente
+		foreign key numeroOrden referencia a numeroOrden en OrdenMedica
+		
+Factura( PK(numFactura),valor,fechaRealizacion, FK(cedulaPaciente),estadoFactura)
+		foreign key cedulaPaciente referencia a cedula en Paciente
+	
+OrdenMedica( PK(consecutivo),fechaingreso, FK(medicoTratante), numeroOrden, fechaSolicitud, estadoOrden)
+		foreign key medicoTratante referencia a cedula en Medico
+		
+Medico( PK(cedula),nombre,apellido,telefono,direccion,especialidad)
+
+ExamenMedico( PK(tipoExamen),fechaCita,fechaRealizacion, FK(numeroOrden), estadoExamen)
+		foreign key numeroOrden referencia a numeroOrden en OrdenMedica
+
+ValorExamen( FK(tipoExamen),valor)
+		foreign key tipoExamen referencia a tipoExamen en ExamenMedico
+	
+Observaciones( FK(tipoExamen),observacion)
+		foreing key tipoExamen referencia a tipoExamen en ExamenMedico
+
