@@ -1,6 +1,6 @@
 /*PROYECTO - LABORATORIO CLINICO - BASE DE DATOS*/
-
-create type estado as enum ('pendiente','terminado','cancelado');
+drop type estado;
+create type estado as enum ('pendiente','cancelado');
 
 create table Contacto(
 	cedulaContacto varchar(10),
@@ -16,6 +16,24 @@ create table Paciente(
 	cedulaContacto varchar(10),
 		primary key (cedula),
 			foreign key (cedulaContacto) references Contacto(cedulaContacto)
+);
+create table Medico(
+	cedula varchar(10),
+	nombre varchar(20),
+	apellido varchar(20),
+	telefono varchar(12),
+	direcicon varchar(40),
+	especialidad varchar(10),
+		primary key (cedula)
+);
+create table ordenMedica(
+	consecutivo int,
+	fechaIngreso date default now(),
+	medicoTratante varchar(10),
+	numeroOrden int,
+	fechaSolicitud date,
+		primary key (numeroOrden),
+		foreign key (medicoTratante) references Medico(cedula)
 );
 create table Factura(
 	numFactura int,
@@ -99,4 +117,9 @@ create table Observaciones(
 --Para una fecha particular se necesita saber 
 --los exámenes que hay pendientes con datos del paciente.
 
-
+/*
+ * Medico
+ * orden medica
+ * paciente
+ * contacto
+ * */
