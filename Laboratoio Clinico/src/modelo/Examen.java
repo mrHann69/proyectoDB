@@ -1,4 +1,4 @@
-package laboratoio.clinico.modelo;
+package modelo;
 
 public class Examen {
     private String tipoExamen;

@@ -1,4 +1,4 @@
-package laboratoio.clinico.modelo;
+package modelo;
 import java.time.LocalDate;
 
 
