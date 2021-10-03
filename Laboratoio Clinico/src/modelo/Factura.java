@@ -1,7 +1,6 @@
 package laboratoio.clinico.modelo;
 import java.time.LocalDate;
 
-import javax.swing.SizeRequirements;
 
 public class Factura {
     private String numeroFactura, conseOrden, estadoFactura;
