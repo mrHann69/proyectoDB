@@ -1,7 +1,10 @@
 /*PROYECTO - LABORATORIO CLINICO - BASE DE DATOS*/
-
+/*
+ * crear datos y realizar consultas
+ * DAO clases y solo metodo insert
+ * */
 create domain name_domain varchar(20) check ( value ~ '^[A-Z][a-z]*$' and not null);
-create type estado as enum ('pendiente','terminado','cancelado');
+--create type estado as enum ('pendiente','cancelado');
 
 create table paciente (
     cedulaPaciente bigint,
@@ -66,7 +69,7 @@ create table ordenExamen (
     consecutivo varchar(20),
     examen varchar(30),
     fechaCita date,
-    fechaRealizacion date not null
+    fechaRealizacion date not null -- <-es lo mismo que la fecha cita
 );
 
 alter table ordenExamen
@@ -98,117 +101,20 @@ alter table factura
     add constraint fk_factura foreign key (conseOrden) references orden(consecutivo);
 
 
-
-/*
-drop type estado;
-create type estado as enum ('pendiente','cancelado');
-
-create table Contacto(
-	cedulaContacto varchar(10),
-	nombreContacto varchar(20),
-	telefonoContacto varchar(10),
-		primary key (cedulaContacto)
-);
-create table Paciente(
-	cedula varchar(10),
-	fechaNacimiento date,
-	POS varchar(5),
-	telefonoContacto varchar(10),
-	cedulaContacto varchar(10),
-		primary key (cedula),
-			foreign key (cedulaContacto) references Contacto(cedulaContacto)
-);
-create table Medico(
-	cedula varchar(10),
-	nombre varchar(20),
-	apellido varchar(20),
-	telefono varchar(12),
-	direcicon varchar(40),
-	especialidad varchar(10),
-		primary key (cedula)
-);
-create table ordenMedica(
-	consecutivo int,
-	fechaIngreso date default now(),
-	medicoTratante varchar(10),
-	numeroOrden int,
-	fechaSolicitud date,
-		primary key (numeroOrden),
-		foreign key (medicoTratante) references Medico(cedula)
-);
-create table Factura(
-	numFactura int,
-	valor float,
-	fechaRealizacion date,
-	numOrden int,
-	estadoFactura estado,
-		foreign key (numOrden) references ordenMedica(numeroOrden)
-);
-create table Medico(
-	cedula varchar(10),
-	nombre varchar(20),
-	apellido varchar(20),
-	telefono varchar(12),
-	direcicon varchar(40),
-	especialidad varchar(10),
-		primary key (cedula)
-);
-create table ordenMedica(
-	consecutivo int,
-	fechaIngreso date default now(),
-	medicoTratante varchar(10),
-	numeroOrden int,
-	fechaSolicitud date,
-		primary key (numeroOrden),
-		foreign key (medicoTratante) references Medico(cedula)
-);
-create table pacienteOrden(
-	cedula varchar(10),
-	numeroOrden int,
-		foreign key (cedula) references Paciente(cedula),
-		foreign key (numeroOrden) references ordenMedica(numeroOrden)
-);
-create table examenMedico(
-	tipoExamen varchar(40),
-	fechaCita date,
-	fechaRealizacion date,
-	numeroOrden int,
-		primary key (tipoExamen),
-			foreign key (numeroOrden) references ordenMedica(numeroOrden)
-);
-create table valorExamen(
-	tipoExamen varchar(40),
-	valor float,
-		unique(tipoExamen),
-		foreign key (tipoExamen) references examenMedico(tipoExamen)
-);
-create table Observaciones(
-	tipoExamen varchar(40),
-	observacion varchar(256),
-		foreign key (tipoExamen) references examenMedico(tipoExamen)
-);
+/*CONTEXTO
+ * Al laboratorio clínico PRUEBAS, le interesa registrar los exámenes de laboratorio que realiza a los pacientes.  Los pacientes pueden pertenecer a alguna entidad de salud que le cubre los exámenes o ser particulares.  En todos los casos de los pacientes interesa saber cédula, fecha de nacimiento, POS, teléfonos de contacto, celular, correo electrónico, nombre de otra persona para contacto y teléfono de contacto.
+Cuando llega un paciente solicitando la realización de exámenes, si no está registrado se le piden todos los datos y se registra en el sistema, y con la orden que mandó el médico se registran los exámenes.  Se debe crear una orden en el sistema,  esta orden debe tener un consecutivo, fecha de solicitud, fecha de ingreso en el sistema(now), médico tratante y número de la orden que entregó el médico.  Y se prosigue a ingresar los exámenes que pidió el médico: tipo de examen, fecha cita, fecha de realización y observaciones (pueden ser varias).
+Del médico se maneja la siguiente información: cédula, nombres y apellidos, teléfonos de contacto, dirección, especialidad.
+Sólo para los pacientes particulares se debe crear una factura por cada orden de exámenes que realice, debe tener número de la factura, valor a pagar, la información del paciente (cédula, nombre, dirección, teléfono), fecha de realización.  Cada tipo de examen tiene un valor distinto, por ejemplo, el valor de un examen de triglicéridos es de 15.000, un hemograma sencillo de 10.000, etc. 
 */
-
-/*orden de creacion de las tablas
- * Contacto
- * Paciente
- * tipo estado
- * Factura
- * Medico
- * OrdenMedica
- * PacienteOrden
- * ExamenMedico
- * ValorExamen
- * Observaciones
-*/
-
 /*CONSULTAS*/
 --A fin de mes, se debe generar una factura, 
 --relacionada con las diferentes órdenes de la entidad prestadora 
 --que va a pagar los exámenes. 
 
---Es posible consultar por número de factura, el encabezado de la factura con el detalle de los exámenes que se realizaron en ese mes 
---(tipo de examen, número de orden, cédula del paciente) y el valor total de la factura.
+--Es posible consultar por número de factura, el encabezado de la factura con el detalle 
+--de los exámenes que se realizaron en ese mes (tipo de examen, número de orden, cédula del paciente) 
+--y el valor total de la factura.
 
 --A fin de mes interesa conocer el médico tratante que más pacientes remitió.   
 
@@ -219,9 +125,3 @@ create table Observaciones(
 --Para una fecha particular se necesita saber 
 --los exámenes que hay pendientes con datos del paciente.
 
-/*
- * Medico
- * orden medica
- * paciente
- * contacto
- * */

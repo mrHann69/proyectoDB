@@ -3,14 +3,14 @@ package modelo;
 
 import java.time.LocalDate;
 
-public class OrdenMerdica {
+public class OrdenMedica {
         private int consecutivo;
         private LocalDate fechaingreso;    
         private String medicoTratante ;
         private int numeroOrden;
         private LocalDate fechaSolicitud;
 
-    public OrdenMerdica(int consecutivo, LocalDate fechaingreso, String medicoTratante, int numeroOrden, LocalDate fechaSolicitud) {
+    public OrdenMedica(int consecutivo, LocalDate fechaingreso, String medicoTratante, int numeroOrden, LocalDate fechaSolicitud) {
         this.consecutivo = consecutivo;
         this.fechaingreso = fechaingreso;
         this.medicoTratante = medicoTratante;
