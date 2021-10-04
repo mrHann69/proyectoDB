@@ -5,13 +5,17 @@ import java.time.LocalDate;
 
 public class Paciente {
     private int cedula;
+    private String nombre;
+    private String apellido;
     private LocalDate fechaNacimiento;
     private String POS;
     private String telefonoContacto;
     private String cedulaContacto;
 
-    public Paciente(int cedula, LocalDate fechaNacimiento, String POS, String telefonoContacto, String cedulaContacto) {
+    public Paciente(int cedula, String nombre, String apellido, LocalDate fechaNacimiento, String POS, String telefonoContacto, String cedulaContacto) {
         this.cedula = cedula;
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.POS = POS;
         this.telefonoContacto = telefonoContacto;
@@ -24,6 +28,22 @@ public class Paciente {
 
     public void setCedula(int cedula) {
         this.cedula = cedula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public LocalDate getFechaNacimiento() {

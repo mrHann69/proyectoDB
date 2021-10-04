@@ -1,5 +1,6 @@
 package modelo.modeloDAO;
 import java.sql.*;
+import java.util.ArrayList;
 import modelo.Paciente;
 import services.Servicio;
 
@@ -16,12 +17,16 @@ public class PacienteDAO {
         rtdo = 0;
         try{
             con = Servicio.getConnection();
-            String sql = "INSERT INTO Paciente values (?,?,?,?)";
+            String sql = "INSERT INTO Paciente VALUES (?,?,?,?,?,?,?,?)";
             pstm = con.prepareStatement(sql);
-            pstm.setString(1, p.());
+            
+            pstm.setInt(1, p.getCedula());
             pstm.setString(2, p.getNombre());
-            pstm.setString(3,p.getNivel());
-            pstm.setInt(4,p.getNum_creditos());
+            pstm.setString(3,p.getApellido());
+            pstm.setDate(4,p.getFechaNacimiento());
+            pstm.setString(5,p.getPOS());
+            pstm.setString(6,p.getTelefonoContacto());
+            pstm.setString(7,p.getCedulaContacto());                                 
             rtdo = pstm.executeUpdate();  
         }
         catch(SQLException ex){
@@ -36,5 +41,21 @@ public class PacienteDAO {
             }
         }
         return rtdo;
+    }
+    
+    public ArrayList<Paciente> getAllPacientes(){
+        ArrayList<Paciente> todos = null;
+        Connection conn=null;
+        PreparedStatement psmt;
+        try {
+            todos = new ArrayList<>();
+            conn = Servicio.getConnection();
+            String consulta = "SELECT * FROM Pacientes";
+            psmt=conn.prepareStatement(consulta);
+            todos = (ArrayList<Paciente>) psmt.executeQuery();
+        } catch (SQLException e) {
+            System.out.println("Error: "+e.getLocalizedMessage());
+        }
+        return todos;
     }
 }

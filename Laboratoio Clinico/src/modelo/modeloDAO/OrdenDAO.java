@@ -1,15 +1,17 @@
 package modelo.modeloDAO;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import modelo.Medico;
+import modelo.Orden;
 import services.Servicio;
 
+public class OrdenDAO {
 
-public class MedicoDAO {
-    
-    public MedicoDAO() {
+    public OrdenDAO() {
     }
-    public int insert(Medico med){      
+    
+    public int insert(Orden om){      
         Connection con = null;
         PreparedStatement pstm;
         pstm = null;
@@ -17,14 +19,17 @@ public class MedicoDAO {
         rtdo = 0;
         try{
             con = Servicio.getConnection();
-            String sql = "INSERT INTO Paciente VALUES (?,?,?,?,?,?)";
-            pstm = con.prepareStatement(sql);         
-            pstm.setInt(1, med.getCedula());
-            pstm.setString(2, med.getNombre());
-            pstm.setString(3,med.getApellido());
-            pstm.setString(4,med.getTelefono());
-            pstm.setString(5,med.getDireccion());
-            pstm.setString(6,med.getEspecialidad());                                  
+            String sql = "INSERT INTO ordenMedica VALUES (?,?,?,?,?,?)";
+            pstm = con.prepareStatement(sql);
+            
+            pstm.setString(1, om.getConsecutivo());
+            pstm.setInt(2, om.getCedulaPaciente());
+            pstm.setDate(3, om.getFechaSolicitud() );
+            pstm.setDate(4, om.getFechaIngreso());
+            pstm.setInt(5, om.getCedulaMedico());
+            pstm.setString(6, om.getNumOrdenMed());
+
+                                                
             rtdo = pstm.executeUpdate();  
         }
         catch(SQLException ex){
@@ -39,10 +44,10 @@ public class MedicoDAO {
             }
         }
         return rtdo;
-    } 
+    }
     
-        public ArrayList<Medico> getAllPacientes(){
-        ArrayList<Medico> todos = null;
+    public ArrayList<Orden> getAllPacientes(){
+        ArrayList<Orden> todos = null;
         Connection conn=null;
         PreparedStatement psmt;
         try {
@@ -50,7 +55,7 @@ public class MedicoDAO {
             conn = Servicio.getConnection();
             String consulta = "SELECT * FROM Orden";
             psmt=conn.prepareStatement(consulta);
-            todos = (ArrayList<Medico>) psmt.executeQuery();
+            todos = (ArrayList<Orden>) psmt.executeQuery();
         } catch (SQLException e) {
             System.out.println("Error: "+e.getLocalizedMessage());
         }
