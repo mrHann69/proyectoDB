@@ -83,7 +83,7 @@ create table observaExamen (
     tipoExamen varchar(30),
     observacion text not null
 );
-
+ 
 alter table observaExamen
     add constraint fk_obserExam
         foreign key (consecutivo, tipoExamen) references ordenExamen(consecutivo, examen);
