@@ -5,6 +5,11 @@
  */
 package front;
 
+import java.awt.event.ActionListener;
+import java.util.Arrays;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Aura
@@ -175,9 +180,26 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    public void addListenerIngresar(ActionListener listenPrograma){
+        this.jButtonEntrar1.addActionListener(listenPrograma);       
+    }
+    public void addListenerCancelar(ActionListener listenPrograma){
+        this.jButtonCancelar.addActionListener(listenPrograma);       
+    }  
+
+    public String getCedulaTF() {
+        return this.cedulaTF.getText();
+    }
+    public String getjPassword() {
+        char[]algo=this.jPassword.getPassword();
+        String pass="";
+        for (int i=0;i<algo.length;i++) {
+            pass += algo[i];
+        }
+        return pass;
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -202,12 +224,12 @@ public class login extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new login().setVisible(true);
-            }
-        });
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new login().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -221,4 +243,12 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPassword;
     // End of variables declaration//GEN-END:variables
+
+    public void cancelar() {
+        this.cedulaTF.setText("");
+        this.jPassword.setText("");
+        dispose();
+    }
+
+
 }
