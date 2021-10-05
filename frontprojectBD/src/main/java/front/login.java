@@ -43,13 +43,15 @@ public class login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOGIN");
 
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Cédula");
 
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Contraseña");
 
@@ -59,6 +61,7 @@ public class login extends javax.swing.JFrame {
             }
         });
 
+        jButtonCancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jButtonCancelar.setText("CANCELAR");
         jButtonCancelar.setToolTipText("");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +71,7 @@ public class login extends javax.swing.JFrame {
         });
 
         jButtonEntrar1.setBackground(new java.awt.Color(3, 103, 166));
+        jButtonEntrar1.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jButtonEntrar1.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEntrar1.setText("ENTRAR");
         jButtonEntrar1.setToolTipText("");

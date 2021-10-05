@@ -60,11 +60,11 @@ public class Principal extends javax.swing.JFrame {
         jPlogo.setLayout(jPlogoLayout);
         jPlogoLayout.setHorizontalGroup(
             jPlogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 268, Short.MAX_VALUE)
         );
         jPlogoLayout.setVerticalGroup(
             jPlogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+            .addGap(0, 226, Short.MAX_VALUE)
         );
 
         jBcerrar.setBackground(new java.awt.Color(204, 204, 204));
@@ -76,30 +76,43 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BIENVENIDOS");
 
         JBOrden.setBackground(new java.awt.Color(3, 103, 166));
+        JBOrden.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        JBOrden.setForeground(new java.awt.Color(255, 255, 255));
         JBOrden.setText("Ingresar Orden");
         JBOrden.setToolTipText("");
 
         JBregistrar.setBackground(new java.awt.Color(3, 103, 166));
+        JBregistrar.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        JBregistrar.setForeground(new java.awt.Color(255, 255, 255));
         JBregistrar.setText("Registrar paciente");
         JBregistrar.setToolTipText("");
 
         JBReporte.setBackground(new java.awt.Color(3, 103, 166));
+        JBReporte.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        JBReporte.setForeground(new java.awt.Color(255, 255, 255));
         JBReporte.setText("Reportes");
         JBReporte.setToolTipText("");
 
         JBFacturacion.setBackground(new java.awt.Color(3, 103, 166));
+        JBFacturacion.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        JBFacturacion.setForeground(new java.awt.Color(255, 255, 255));
         JBFacturacion.setText("Facturación");
         JBFacturacion.setToolTipText("");
 
         JBPendientes.setBackground(new java.awt.Color(3, 103, 166));
+        JBPendientes.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        JBPendientes.setForeground(new java.awt.Color(255, 255, 255));
         JBPendientes.setText("Ordenes Pendientes");
         JBPendientes.setToolTipText("");
 
         JBExamenesPendientes.setBackground(new java.awt.Color(3, 103, 166));
+        JBExamenesPendientes.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        JBExamenesPendientes.setForeground(new java.awt.Color(255, 255, 255));
         JBExamenesPendientes.setText("Examenes pendientes");
         JBExamenesPendientes.setToolTipText("");
 
@@ -112,7 +125,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(193, 193, 193)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                         .addComponent(jBcerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -124,8 +137,9 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(JBFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JBPendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(JBExamenesPendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addComponent(jPlogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPlogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -136,9 +150,9 @@ public class Principal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jBcerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(JBOrden)
                         .addGap(18, 18, 18)
                         .addComponent(JBregistrar)
@@ -149,12 +163,9 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(JBPendientes)
                         .addGap(18, 18, 18)
-                        .addComponent(JBExamenesPendientes)
-                        .addGap(102, 102, 102))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPlogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(JBExamenesPendientes))
+                    .addComponent(jPlogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(102, 102, 102))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

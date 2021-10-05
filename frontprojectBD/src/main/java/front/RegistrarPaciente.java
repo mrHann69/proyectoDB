@@ -62,25 +62,34 @@ public class RegistrarPaciente extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Registrar Paciente");
 
+        jLabelCedula.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabelCedula.setText("Cedula");
 
+        jLabelFecha.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabelFecha.setText("Fecha de Nacimiento");
 
+        jLabelPOS.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabelPOS.setText("POS");
 
+        jLabelCContacto.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabelCContacto.setText("Cedula Contacto");
 
+        jLabelNombreContacto.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabelNombreContacto.setText("Nombre Contacto");
 
+        jLabelTelefonoContacto1.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jLabelTelefonoContacto1.setText("Telefono Contacto");
 
         jButtonRegistrar.setBackground(new java.awt.Color(3, 103, 166));
+        jButtonRegistrar.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jButtonRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRegistrar.setText("Registrar");
 
+        jButtonCancelar1.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         jButtonCancelar1.setText("Cancelar");
 
         jTextFieldCedula.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +128,7 @@ public class RegistrarPaciente extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addComponent(jButtonRegistrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addComponent(jButtonCancelar1)
                 .addGap(74, 74, 74))
         );
@@ -156,7 +165,7 @@ public class RegistrarPaciente extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRegistrar)
                     .addComponent(jButtonCancelar1))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
