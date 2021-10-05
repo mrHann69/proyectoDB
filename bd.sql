@@ -1,5 +1,10 @@
+/*PROYECTO - LABORATORIO CLINICO - BASE DE DATOS*/
+/*
+ * crear datos y realizar consultas
+ * DAO clases y solo metodo insert
+ * */
 create domain name_domain varchar(20) check ( value ~ '^[A-Z][a-z]*$' and not null);
-create type estado as enum ('pendiente','terminado','cancelado');
+--create type estado as enum ('pendiente','cancelado');
 
 create table paciente (
     cedulaPaciente bigint,
@@ -64,7 +69,7 @@ create table ordenExamen (
     consecutivo varchar(20),
     examen varchar(30),
     fechaCita date,
-    fechaRealizacion date not null
+    fechaRealizacion date not null -- <-es lo mismo que la fecha cita
 );
 
 alter table ordenExamen
@@ -78,7 +83,7 @@ create table observaExamen (
     tipoExamen varchar(30),
     observacion text not null
 );
-
+ 
 alter table observaExamen
     add constraint fk_obserExam
         foreign key (consecutivo, tipoExamen) references ordenExamen(consecutivo, examen);
@@ -95,16 +100,46 @@ alter table factura
     add constraint pk_factura primary key (numFactura),
     add constraint fk_factura foreign key (conseOrden) references orden(consecutivo);
 
-/*CONSULTAS*/
---A fin de mes, se debe generar una factura, relacionada con las diferentes órdenes de la entidad prestadora que va a pagar los exámenes. 
 
---Es posible consultar por número de factura, el encabezado de la factura con el detalle de los exámenes que se realizaron en ese mes 
---(tipo de examen, número de orden, cédula del paciente) y el valor total de la factura.
+   --tabla para login de usuarios
+drop table trabajadores ;
+create table trabajadores(
+	cedula varchar(12) not null unique,
+	pass varchar(20) not null
+);
+alter table trabajadores
+	add constraint pk_workers primary key (cedula,pass);
+
+
+select cedula from trabajadores where cedula= 'admin' and pass= 'admin'
+
+/*CONTEXTO
+ * Al laboratorio clínico PRUEBAS, le interesa registrar los exámenes de laboratorio que realiza a los pacientes.  Los pacientes pueden pertenecer a alguna entidad de salud que le cubre los exámenes o ser particulares.  En todos los casos de los pacientes interesa saber cédula, fecha de nacimiento, POS, teléfonos de contacto, celular, correo electrónico, nombre de otra persona para contacto y teléfono de contacto.
+Cuando llega un paciente solicitando la realización de exámenes, si no está registrado se le piden todos los datos y se registra en el sistema, y con la orden que mandó el médico se registran los exámenes.  Se debe crear una orden en el sistema,  esta orden debe tener un consecutivo, fecha de solicitud, fecha de ingreso en el sistema(now), médico tratante y número de la orden que entregó el médico.  Y se prosigue a ingresar los exámenes que pidió el médico: tipo de examen, fecha cita, fecha de realización y observaciones (pueden ser varias).
+Del médico se maneja la siguiente información: cédula, nombres y apellidos, teléfonos de contacto, dirección, especialidad.
+Sólo para los pacientes particulares se debe crear una factura por cada orden de exámenes que realice, debe tener número de la factura, valor a pagar, la información del paciente (cédula, nombre, dirección, teléfono), fecha de realización.  Cada tipo de examen tiene un valor distinto, por ejemplo, el valor de un examen de triglicéridos es de 15.000, un hemograma sencillo de 10.000, etc. 
+*/
+/*CONSULTAS*/
+--A fin de mes, se debe generar una factura, 
+--relacionada con las diferentes órdenes de la entidad prestadora 
+--que va a pagar los exámenes. 
+
+--Es posible consultar por número de factura, el encabezado de la factura con el detalle 
+--de los exámenes que se realizaron en ese mes (tipo de examen, número de orden, cédula del paciente) 
+--y el valor total de la factura.
 
 --A fin de mes interesa conocer el médico tratante que más pacientes remitió.   
 
 --Un consolidado de ingresos por tipo de paciente (particular o por entidad de salud), ordenados de mayor a menor. 
 
+   
+   
+select * from factura;
+   
+   
+   
 --También se requiere tener información de un paciente en particular (por número de cédula), qué exámenes se realizó y con fecha de realización.
 
---Para una fecha particular se necesita saber los exámenes que hay pendientes con datos del paciente.
+--Para una fecha particular se necesita saber 
+--los exámenes que hay pendientes con datos del paciente.
+
