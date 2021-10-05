@@ -19,7 +19,7 @@ insert into contactoPaciente values
 								(753214,'Pacientesiete','Apellido',312654987),
 								(147896,'Pacienteocho','Apellido',312654987),
 								(365214,'Pacientenueve','Apellido',312654987);
-
+select * from medico;
 insert into medico values
 						(7895,'Medicouno','Apellido',852369,'direccion1','especialidad1'), --01
 						(9584,'Medicodos','Apellido',852745,'direccion2','especialidad2'), --02
@@ -90,8 +90,9 @@ insert into factura values
 						('90103', '000007','2021/02/05',32000,'pendiente');
 
 
-
-
+insert into trabajadores values
+				('102030','pass1'),
+				('admin','admin');
 
 										
 --A fin de mes, se debe generar una factura, 

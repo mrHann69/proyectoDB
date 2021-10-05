@@ -101,6 +101,18 @@ alter table factura
     add constraint fk_factura foreign key (conseOrden) references orden(consecutivo);
 
 
+   --tabla para login de usuarios
+drop table trabajadores ;
+create table trabajadores(
+	cedula varchar(12) not null unique,
+	pass varchar(20) not null
+);
+alter table trabajadores
+	add constraint pk_workers primary key (cedula,pass);
+
+
+select cedula from trabajadores where cedula= 'admin' and pass= 'admin'
+
 /*CONTEXTO
  * Al laboratorio clínico PRUEBAS, le interesa registrar los exámenes de laboratorio que realiza a los pacientes.  Los pacientes pueden pertenecer a alguna entidad de salud que le cubre los exámenes o ser particulares.  En todos los casos de los pacientes interesa saber cédula, fecha de nacimiento, POS, teléfonos de contacto, celular, correo electrónico, nombre de otra persona para contacto y teléfono de contacto.
 Cuando llega un paciente solicitando la realización de exámenes, si no está registrado se le piden todos los datos y se registra en el sistema, y con la orden que mandó el médico se registran los exámenes.  Se debe crear una orden en el sistema,  esta orden debe tener un consecutivo, fecha de solicitud, fecha de ingreso en el sistema(now), médico tratante y número de la orden que entregó el médico.  Y se prosigue a ingresar los exámenes que pidió el médico: tipo de examen, fecha cita, fecha de realización y observaciones (pueden ser varias).
