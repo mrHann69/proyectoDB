@@ -7,13 +7,11 @@ import modelo.modeloDAO.LoginDAO;
 import front.login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 
 public class Control {
     protected login vistalogin;
-//    public static void main(String[] args) {
-
-//    }
     
     protected void iniciarLogin(){
         this.vistalogin = new login();
@@ -44,6 +42,8 @@ public class Control {
                     vistalogin.setVisible(false);
                     System.out.println("autentication: "+aux);
                 }else{
+                    JOptionPane.showMessageDialog(null, "Cedula/Contraseña incorrecta");
+                    vistalogin.cedulaTF.setText("");
                     System.out.println("autentication: "+aux);
                 }
         }
