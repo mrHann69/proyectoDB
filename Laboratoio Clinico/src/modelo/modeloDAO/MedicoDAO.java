@@ -22,7 +22,7 @@ public class MedicoDAO {
             pstm.setInt(1, med.getCedula());
             pstm.setString(2, med.getNombre());
             pstm.setString(3, med.getApellido());
-            pstm.setString(4, med.getTelefono());
+            pstm.setInt(4, med.getTelefono());
             pstm.setString(5, med.getDireccion());
             pstm.setString(6, med.getEspecialidad());
             rtdo = pstm.executeUpdate();

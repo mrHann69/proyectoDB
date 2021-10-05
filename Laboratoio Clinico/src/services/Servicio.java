@@ -20,11 +20,9 @@ public class Servicio {
                 String url = rb.getString("url");
                 String pwd = rb.getString("pwd");
                 String usr = rb.getString("usr");
-                
                 Class.forName(driver);
                 con = DriverManager.getConnection(url, usr, pwd);
             }
-                         
         }
         catch(ClassNotFoundException | SQLException ex){
             System.out.println("Error get connection: "+ex.getLocalizedMessage());

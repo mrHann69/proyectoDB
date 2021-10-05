@@ -4,14 +4,14 @@ public class Medico {
     private int cedula;
     private String nombre; 
     private String apellido; 
-    private String telefono; 
+    private int telefono; 
     private String direccion;
     private String especialidad;
     
     public Medico(int cedula,
             String nombre, 
             String apellido, 
-            String telefono, 
+            int telefono, 
             String direccion, 
             String especialidad){
         this.cedula = cedula;
@@ -46,11 +46,11 @@ public class Medico {
         this.apellido = apellido;
     }
 
-    public String getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(String telefono) {
+    public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
