@@ -120,6 +120,12 @@ Sólo para los pacientes particulares se debe crear una factura por cada orden d
 
 --Un consolidado de ingresos por tipo de paciente (particular o por entidad de salud), ordenados de mayor a menor. 
 
+   
+   
+select * from factura;
+   
+   
+   
 --También se requiere tener información de un paciente en particular (por número de cédula), qué exámenes se realizó y con fecha de realización.
 
 --Para una fecha particular se necesita saber 
