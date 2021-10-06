@@ -244,11 +244,13 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPassword;
     // End of variables declaration//GEN-END:variables
 
-    public void cancelar() {
+    public void limpiar() {
         this.cedulaTF.setText("");
         this.jPassword.setText("");
+    }
+    public void cancelar() {
+        limpiar();
         dispose();
     }
-
     
 }

@@ -1,6 +1,8 @@
 
 package front;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Aura
@@ -26,12 +28,12 @@ public class Principal extends javax.swing.JFrame {
         jPlogo = new javax.swing.JPanel();
         jBcerrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        JBOrden = new javax.swing.JButton();
-        JBregistrar = new javax.swing.JButton();
-        JBReporte = new javax.swing.JButton();
-        JBFacturacion = new javax.swing.JButton();
-        JBPendientes = new javax.swing.JButton();
-        JBExamenesPendientes = new javax.swing.JButton();
+        btnOrden = new javax.swing.JButton();
+        btnRPaciente = new javax.swing.JButton();
+        btnReportes = new javax.swing.JButton();
+        btnFacturacion = new javax.swing.JButton();
+        btnOPendientes = new javax.swing.JButton();
+        btnEPendientes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,45 +72,46 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(52, 52, 52));
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BIENVENIDOS");
 
-        JBOrden.setBackground(new java.awt.Color(3, 103, 166));
-        JBOrden.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        JBOrden.setForeground(new java.awt.Color(255, 255, 255));
-        JBOrden.setText("Ingresar Orden");
-        JBOrden.setToolTipText("");
+        btnOrden.setBackground(new java.awt.Color(3, 103, 166));
+        btnOrden.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        btnOrden.setForeground(new java.awt.Color(255, 255, 255));
+        btnOrden.setText("Ingresar Orden");
+        btnOrden.setToolTipText("");
 
-        JBregistrar.setBackground(new java.awt.Color(3, 103, 166));
-        JBregistrar.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        JBregistrar.setForeground(new java.awt.Color(255, 255, 255));
-        JBregistrar.setText("Registrar paciente");
-        JBregistrar.setToolTipText("");
+        btnRPaciente.setBackground(new java.awt.Color(3, 103, 166));
+        btnRPaciente.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        btnRPaciente.setForeground(new java.awt.Color(255, 255, 255));
+        btnRPaciente.setText("Registrar paciente");
+        btnRPaciente.setToolTipText("");
 
-        JBReporte.setBackground(new java.awt.Color(3, 103, 166));
-        JBReporte.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        JBReporte.setForeground(new java.awt.Color(255, 255, 255));
-        JBReporte.setText("Reportes");
-        JBReporte.setToolTipText("");
+        btnReportes.setBackground(new java.awt.Color(3, 103, 166));
+        btnReportes.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        btnReportes.setForeground(new java.awt.Color(255, 255, 255));
+        btnReportes.setText("Reportes");
+        btnReportes.setToolTipText("");
 
-        JBFacturacion.setBackground(new java.awt.Color(3, 103, 166));
-        JBFacturacion.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        JBFacturacion.setForeground(new java.awt.Color(255, 255, 255));
-        JBFacturacion.setText("Facturación");
-        JBFacturacion.setToolTipText("");
+        btnFacturacion.setBackground(new java.awt.Color(3, 103, 166));
+        btnFacturacion.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        btnFacturacion.setForeground(new java.awt.Color(255, 255, 255));
+        btnFacturacion.setText("Facturación");
+        btnFacturacion.setToolTipText("");
 
-        JBPendientes.setBackground(new java.awt.Color(3, 103, 166));
-        JBPendientes.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        JBPendientes.setForeground(new java.awt.Color(255, 255, 255));
-        JBPendientes.setText("Ordenes Pendientes");
-        JBPendientes.setToolTipText("");
+        btnOPendientes.setBackground(new java.awt.Color(3, 103, 166));
+        btnOPendientes.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        btnOPendientes.setForeground(new java.awt.Color(255, 255, 255));
+        btnOPendientes.setText("Ordenes Pendientes");
+        btnOPendientes.setToolTipText("");
 
-        JBExamenesPendientes.setBackground(new java.awt.Color(3, 103, 166));
-        JBExamenesPendientes.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        JBExamenesPendientes.setForeground(new java.awt.Color(255, 255, 255));
-        JBExamenesPendientes.setText("Examenes pendientes");
-        JBExamenesPendientes.setToolTipText("");
+        btnEPendientes.setBackground(new java.awt.Color(3, 103, 166));
+        btnEPendientes.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        btnEPendientes.setForeground(new java.awt.Color(255, 255, 255));
+        btnEPendientes.setText("Examenes pendientes");
+        btnEPendientes.setToolTipText("");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -125,12 +128,12 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JBOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JBregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JBReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JBFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JBPendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JBExamenesPendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFacturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnOPendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEPendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPlogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)))
@@ -147,17 +150,17 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(JBOrden)
+                        .addComponent(btnOrden)
                         .addGap(18, 18, 18)
-                        .addComponent(JBregistrar)
+                        .addComponent(btnRPaciente)
                         .addGap(18, 18, 18)
-                        .addComponent(JBReporte)
+                        .addComponent(btnReportes)
                         .addGap(18, 18, 18)
-                        .addComponent(JBFacturacion)
+                        .addComponent(btnFacturacion)
                         .addGap(18, 18, 18)
-                        .addComponent(JBPendientes)
+                        .addComponent(btnOPendientes)
                         .addGap(18, 18, 18)
-                        .addComponent(JBExamenesPendientes))
+                        .addComponent(btnEPendientes))
                     .addComponent(jPlogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(102, 102, 102))
         );
@@ -187,6 +190,27 @@ public class Principal extends javax.swing.JFrame {
     private void jBcerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcerrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBcerrarActionPerformed
+
+    
+    public void addListenerIngresarOrden(ActionListener listenPrograma){
+        this.btnOrden.addActionListener(listenPrograma);       
+    }  
+    public void addListenerRegistrarPaciente(ActionListener listenPrograma){
+        this.btnRPaciente.addActionListener(listenPrograma);       
+    }  
+    public void addListenerReportes(ActionListener listenPrograma){
+        this.btnReportes.addActionListener(listenPrograma);       
+    }  
+    public void addListenerFacturacion(ActionListener listenPrograma){
+        this.btnFacturacion.addActionListener(listenPrograma);       
+    }  
+    public void addListenerOrdenesPendientes(ActionListener listenPrograma){
+        this.btnOPendientes.addActionListener(listenPrograma);       
+    }  
+    public void addListenerExamenesPendientes(ActionListener listenPrograma){
+        this.btnEPendientes.addActionListener(listenPrograma);       
+    }  
+
 
     /**
      * @param args the command line arguments
@@ -224,12 +248,12 @@ public class Principal extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBExamenesPendientes;
-    private javax.swing.JButton JBFacturacion;
-    private javax.swing.JButton JBOrden;
-    private javax.swing.JButton JBPendientes;
-    private javax.swing.JButton JBReporte;
-    private javax.swing.JButton JBregistrar;
+    private javax.swing.JButton btnEPendientes;
+    private javax.swing.JButton btnFacturacion;
+    private javax.swing.JButton btnOPendientes;
+    private javax.swing.JButton btnOrden;
+    private javax.swing.JButton btnRPaciente;
+    private javax.swing.JButton btnReportes;
     private javax.swing.JButton jBcerrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

@@ -85,12 +85,12 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JBOrden" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="JBregistrar" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="JBReporte" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="JBFacturacion" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="JBPendientes" min="-2" pref="211" max="-2" attributes="0"/>
-                              <Component id="JBExamenesPendientes" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="btnOrden" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="btnRPaciente" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="btnReportes" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="btnFacturacion" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="btnOPendientes" min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="btnEPendientes" min="-2" pref="211" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jPlogo" min="-2" max="-2" attributes="0"/>
@@ -114,17 +114,17 @@
                   <EmptySpace pref="51" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="JBOrden" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnOrden" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="JBregistrar" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnRPaciente" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="JBReporte" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnReportes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="JBFacturacion" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnFacturacion" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="JBPendientes" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnOPendientes" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="JBExamenesPendientes" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnEPendientes" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jPlogo" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -165,14 +165,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="34" green="34" red="34" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Trebuchet MS" size="11" style="0"/>
+              <Font name="Trebuchet MS" size="14" style="0"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="BIENVENIDOS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="JBOrden">
+        <Component class="javax.swing.JButton" name="btnOrden">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a6" green="67" red="3" type="rgb"/>
@@ -187,7 +190,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="JBregistrar">
+        <Component class="javax.swing.JButton" name="btnRPaciente">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a6" green="67" red="3" type="rgb"/>
@@ -202,7 +205,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="JBReporte">
+        <Component class="javax.swing.JButton" name="btnReportes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a6" green="67" red="3" type="rgb"/>
@@ -217,7 +220,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="JBFacturacion">
+        <Component class="javax.swing.JButton" name="btnFacturacion">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a6" green="67" red="3" type="rgb"/>
@@ -232,7 +235,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="JBPendientes">
+        <Component class="javax.swing.JButton" name="btnOPendientes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a6" green="67" red="3" type="rgb"/>
@@ -247,7 +250,7 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="JBExamenesPendientes">
+        <Component class="javax.swing.JButton" name="btnEPendientes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="a6" green="67" red="3" type="rgb"/>
