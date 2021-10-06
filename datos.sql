@@ -39,6 +39,10 @@ insert into orden values
 						('000008',147896,'2021/02/08','2021/03/08', 9584,'100008'),
 						('000009',365214,'2021/01/22','2021/02/22', 7895,'100009');
 				
+insert into orden values ('010',123456,'2021-03-01','2021-03-22', 1258,'100010');
+delete from orden where consecutivo ='000010';
+
+
 insert into examen values
 						('trigliceridos',15000),
 						('hemograma sencillo', 10000),

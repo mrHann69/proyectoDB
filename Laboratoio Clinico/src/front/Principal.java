@@ -98,7 +98,7 @@ public class Principal extends javax.swing.JFrame {
         btnFacturacion.setBackground(new java.awt.Color(3, 103, 166));
         btnFacturacion.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
         btnFacturacion.setForeground(new java.awt.Color(255, 255, 255));
-        btnFacturacion.setText("Facturación");
+        btnFacturacion.setText("Facturacion");
         btnFacturacion.setToolTipText("");
 
         btnOPendientes.setBackground(new java.awt.Color(3, 103, 166));

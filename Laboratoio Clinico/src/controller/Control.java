@@ -1,11 +1,13 @@
 
 package controller;
 
+import front.Facturacion;
 import front.Principal;
 import modelo.Login;
 import modelo.modeloDAO.LoginDAO;
 import front.login;
 import front.IngresarOrden;
+import front.RegistrarPaciente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
@@ -18,8 +20,8 @@ public class Control {
     protected login vistalogin;
     protected Principal principal;
     protected IngresarOrden ingOrden;
-    
-    
+    protected RegistrarPaciente regPaciente;
+    protected Facturacion factu;
     
     protected void iniciarLogin(){
         this.vistalogin = new login();
@@ -77,11 +79,11 @@ public class Control {
             if(e.getActionCommand().equalsIgnoreCase("Ingresar Orden")){
                 this.ingresarOrden();
             }else if(e.getActionCommand().equalsIgnoreCase("Registrar Paciente")){
-                
+                this.registrarPaciente();
             }else if(e.getActionCommand().equalsIgnoreCase("Reportes")){
                 
             }else if(e.getActionCommand().equalsIgnoreCase("Facturacion")){
-                
+                this.Facturacion();
             }else if(e.getActionCommand().equalsIgnoreCase("Ordenes Pendientes")){
                 
             }else if(e.getActionCommand().equalsIgnoreCase("Examenes Pendientes")){
@@ -96,10 +98,23 @@ public class Control {
                 ingOrden.addListenerAceptar(new IngresarOrdenListener());
                 ingOrden.addListenerCancelar(new IngresarOrdenListener());
         }
-
+        private void registrarPaciente(){
+            regPaciente = new RegistrarPaciente();
+                regPaciente.setVisible(true);
+                regPaciente.addListenerRegistrar(new RegistrarPacienteListener());
+                regPaciente.addListenerCancelar(new RegistrarPacienteListener());
+        }
+        private void Facturacion() {
+            factu = new Facturacion();
+                factu.setVisible(true);
+                factu.addListenerAceptar(new FacturacionListener());
+                factu.addListenerCancelar(new FacturacionListener());
+        }
         protected void cancelar(){
-            
+            principal.dispose();
         }  
+
+        
     }
     
     class IngresarOrdenListener implements ActionListener{
@@ -114,18 +129,55 @@ public class Control {
         }
         private void Aceptar(){
 //            Orden O = new Orden(ingOrden.getTxtConsecutivo().toString(),
-//                                Integer.parseInt(ingOrden.getTxtCedula().toString()),
-//                                ,
-//                                ingOrden.getTxtFechaIngreso().toString(),
-//                                Integer.parseInt(ingOrden.getTxtMedicoTratante().toString()),
+//                                Integer.parseInt(ingOrden.getTxtCedula().getText()),
+//                                LocalDate.parse(ingOrden.getTxtFechaSolicitud().getText()),
+//                                LocalDate.parse(ingOrden.getTxtFechaIngreso().getText()),
+//                                Integer.parseInt(ingOrden.getTxtMedicoTratante().getText()),
 //                                ingOrden.getTxtNumeroOrden().toString());
 //            OrdenDAO odao = new OrdenDAO();
 //            odao.insert(O);
+            System.out.println(LocalDate.parse(ingOrden.getTxtFechaSolicitud().getText()));
+            System.out.println(LocalDate.parse(ingOrden.getTxtFechaIngreso().getText()));
                 JOptionPane.showMessageDialog(null, "Orden Ingresada");
-            ingOrden.dispose();
-            
+            ingOrden.dispose();   
         }
 
+        protected void cancelar(){
+            ingOrden.dispose();
+        }  
+    }
+    
+    class RegistrarPacienteListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            if(e.getActionCommand().equalsIgnoreCase("Registrar")){
+                this.registrar();
+            }else if(e.getActionCommand().equalsIgnoreCase("Cancelar")){
+                this.cancelar();
+            }
+        }
+        private void registrar(){
+            JOptionPane.showMessageDialog(null, "Paciente Registrado");
+            regPaciente.dispose();   
+        }
+        protected void cancelar(){
+            ingOrden.dispose();
+        }  
+    }
+    
+    class FacturacionListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getActionCommand().equalsIgnoreCase("Aceptar")){
+                this.aceptar();
+            }else if(e.getActionCommand().equalsIgnoreCase("Cancelar")){
+                this.cancelar();
+            }
+        }
+        private void aceptar(){
+            regPaciente.dispose();   
+        }
         protected void cancelar(){
             ingOrden.dispose();
         }  

@@ -83,47 +83,45 @@
                           <Component id="jLabel1" min="-2" pref="180" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="textfielmedicoTratante" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="txtMedicoTratante" min="-2" pref="206" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="fechaSolicitud" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabelnumeroOrden" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtNumeroOrden" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
-                                      <Component id="txtFechaSolicitud" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="textconsecutivo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="CEDULA" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="textfieldfechaIngreso" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="fechaSolicitud" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textconsecutivo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="CEDULA" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtConsecutivo" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
+                                      <Component id="txtCedulaPaciente" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
+                                      <Component id="txtFechaSolicitud" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
+                                      <Component id="txtFechaIngreso" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="textfielmedicoTratante" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabelnumeroOrden" min="-2" pref="71" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtCedula" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
-                                      <Component id="txtConsecutivo" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
-                                      <Component id="txtFechaIngreso" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
+                                      <Component id="txtMedicoTratante" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
+                                      <Component id="txtNumeroOrden" alignment="1" min="-2" pref="206" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
-                          <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
-                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -134,35 +132,35 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtCedula" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtConsecutivo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textconsecutivo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtCedulaPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="CEDULA" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textconsecutivo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtConsecutivo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textfieldfechaIngreso" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtFechaIngreso" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textfielmedicoTratante" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtMedicoTratante" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelnumeroOrden" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtNumeroOrden" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="fechaSolicitud" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtFechaSolicitud" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fechaSolicitud" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtFechaIngreso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textfieldfechaIngreso" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtMedicoTratante" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textfielmedicoTratante" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtNumeroOrden" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelnumeroOrden" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnAceptar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -178,6 +176,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="18" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Ingresar Orden"/>
           </Properties>
@@ -187,23 +188,32 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="11" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Cedula"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtCedula">
+        <Component class="javax.swing.JTextField" name="txtConsecutivo">
         </Component>
         <Component class="javax.swing.JLabel" name="textconsecutivo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="11" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="consecutivo"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Consecutivo"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="textfieldfechaIngreso">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="11" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="fecha Ingreso"/>
           </Properties>
@@ -213,10 +223,13 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="11" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value=" Medico Tratante"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Medico Tratante"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtConsecutivo">
+        <Component class="javax.swing.JTextField" name="txtCedulaPaciente">
         </Component>
         <Component class="javax.swing.JTextField" name="txtMedicoTratante">
         </Component>
@@ -225,13 +238,19 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="11" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="numero Orden"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Numero Orden"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="fechaSolicitud">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="11" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="fecha Solicitud"/>
           </Properties>
@@ -266,6 +285,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFechaIngreso">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaIngresoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

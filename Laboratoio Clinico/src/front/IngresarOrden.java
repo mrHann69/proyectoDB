@@ -24,11 +24,11 @@ public class IngresarOrden extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         CEDULA = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
+        txtConsecutivo = new javax.swing.JTextField();
         textconsecutivo = new javax.swing.JLabel();
         textfieldfechaIngreso = new javax.swing.JLabel();
         textfielmedicoTratante = new javax.swing.JLabel();
-        txtConsecutivo = new javax.swing.JTextField();
+        txtCedulaPaciente = new javax.swing.JTextField();
         txtMedicoTratante = new javax.swing.JTextField();
         jLabelnumeroOrden = new javax.swing.JLabel();
         fechaSolicitud = new javax.swing.JLabel();
@@ -57,25 +57,32 @@ public class IngresarOrden extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Ingresar Orden");
 
         CEDULA.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        CEDULA.setForeground(new java.awt.Color(0, 0, 0));
         CEDULA.setText("Cedula");
 
         textconsecutivo.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        textconsecutivo.setText("consecutivo");
+        textconsecutivo.setForeground(new java.awt.Color(0, 0, 0));
+        textconsecutivo.setText("Consecutivo");
 
         textfieldfechaIngreso.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        textfieldfechaIngreso.setForeground(new java.awt.Color(0, 0, 0));
         textfieldfechaIngreso.setText("fecha Ingreso");
 
         textfielmedicoTratante.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        textfielmedicoTratante.setText(" Medico Tratante");
+        textfielmedicoTratante.setForeground(new java.awt.Color(0, 0, 0));
+        textfielmedicoTratante.setText("Medico Tratante");
 
         jLabelnumeroOrden.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
-        jLabelnumeroOrden.setText("numero Orden");
+        jLabelnumeroOrden.setForeground(new java.awt.Color(0, 0, 0));
+        jLabelnumeroOrden.setText("Numero Orden");
 
         fechaSolicitud.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        fechaSolicitud.setForeground(new java.awt.Color(0, 0, 0));
         fechaSolicitud.setText("fecha Solicitud");
 
         btnAceptar.setBackground(new java.awt.Color(3, 103, 166));
@@ -91,6 +98,12 @@ public class IngresarOrden extends javax.swing.JFrame {
         btnCancelar.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
 
+        txtFechaIngreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFechaIngresoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -101,36 +114,35 @@ public class IngresarOrden extends javax.swing.JFrame {
                         .addGap(98, 98, 98)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addGap(38, 38, 38)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(textfielmedicoTratante)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtMedicoTratante, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(fechaSolicitud, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelnumeroOrden, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNumeroOrden, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaSolicitud, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textfieldfechaIngreso)
+                                    .addComponent(fechaSolicitud)
                                     .addComponent(textconsecutivo)
-                                    .addComponent(CEDULA)
-                                    .addComponent(textfieldfechaIngreso))
+                                    .addComponent(CEDULA))
+                                .addGap(36, 36, 36)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtConsecutivo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFechaSolicitud, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textfielmedicoTratante)
+                                    .addComponent(jLabelnumeroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCedula, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtConsecutivo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(btnAceptar)
-                        .addGap(60, 60, 60)
-                        .addComponent(btnCancelar)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                                    .addComponent(txtMedicoTratante, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNumeroOrden, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnAceptar)
+                .addGap(60, 60, 60)
+                .addComponent(btnCancelar)
+                .addGap(64, 64, 64))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,29 +151,29 @@ public class IngresarOrden extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(58, 58, 58)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtConsecutivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textconsecutivo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCedulaPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CEDULA))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textconsecutivo)
-                    .addComponent(txtConsecutivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                    .addComponent(txtFechaSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fechaSolicitud))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textfieldfechaIngreso)
-                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(txtFechaIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textfieldfechaIngreso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textfielmedicoTratante)
-                    .addComponent(txtMedicoTratante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtMedicoTratante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textfielmedicoTratante))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelnumeroOrden)
-                    .addComponent(txtNumeroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fechaSolicitud)
-                    .addComponent(txtFechaSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                    .addComponent(txtNumeroOrden, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelnumeroOrden))
+                .addGap(68, 68, 68)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptar)
                     .addComponent(btnCancelar))
@@ -194,6 +206,10 @@ public class IngresarOrden extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAceptarActionPerformed
 
+    private void txtFechaIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaIngresoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaIngresoActionPerformed
+
     public void addListenerAceptar(ActionListener listenPrograma){
         this.btnAceptar.addActionListener(listenPrograma);       
     }  
@@ -201,12 +217,12 @@ public class IngresarOrden extends javax.swing.JFrame {
         this.btnCancelar.addActionListener(listenPrograma);       
     }  
 
-    public JTextField getTxtCedula() {
-        return txtCedula;
-    }
-
     public JTextField getTxtConsecutivo() {
         return txtConsecutivo;
+    }
+
+    public JTextField getTxtCedula() {
+        return txtCedulaPaciente;
     }
 
     public JTextField getTxtFechaIngreso() {
@@ -226,9 +242,9 @@ public class IngresarOrden extends javax.swing.JFrame {
     }
     
     public void limpiar(){
-        this.txtCedula.setText("");
         this.txtConsecutivo.setText("");
-        //this.txtFechaIngreso.setText("");
+        this.txtCedulaPaciente.setText("");
+        this.txtFechaIngreso.setText("");
         this.txtMedicoTratante.setText("");
         this.txtNumeroOrden.setText("");
         this.txtFechaSolicitud.setText("");
@@ -284,7 +300,7 @@ public class IngresarOrden extends javax.swing.JFrame {
     private javax.swing.JLabel textconsecutivo;
     private javax.swing.JLabel textfieldfechaIngreso;
     private javax.swing.JLabel textfielmedicoTratante;
-    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCedulaPaciente;
     private javax.swing.JTextField txtConsecutivo;
     private javax.swing.JTextField txtFechaIngreso;
     private javax.swing.JTextField txtFechaSolicitud;
