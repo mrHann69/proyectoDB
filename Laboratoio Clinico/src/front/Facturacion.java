@@ -220,6 +220,9 @@ public class Facturacion extends javax.swing.JFrame {
     public void addListenerCancelar(ActionListener listenPrograma){
         this.btnCancelar.addActionListener(listenPrograma);       
     } 
+    public void salir(){
+        this.dispose();
+    }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

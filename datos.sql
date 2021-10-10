@@ -1,11 +1,11 @@
 insert into paciente values 
 						(123456,'Pacienteuno','Apellidouno','1980/01/01','EPS1',312654987,310456789,'algo1@pacientes.com'),
-						(789456,'Pacientedos','Apellidodos','1990/02/17',null,312654987,310456789,'algo2@pacientes.com'), -- > null
-						(123789,'Pacientetres','Apellidotres','1970/05/11',null,31245132,310456789,'algo3@pacientes.com'), -- > null
+						(789456,'Pacientedos','Apellidodos','1990/02/17','Particular',312654987,310456789,'algo2@pacientes.com'), -- > null
+						(123789,'Pacientetres','Apellidotres','1970/05/11','Particular',31245132,310456789,'algo3@pacientes.com'), -- > null
 						(741258,'Pacientecuatro','Apellidocuatro','1990/04/28','EPS2',312328541,310456789,'algo4@pacientes.com'),
 						(963258,'Pacientecinco','Apellidocinco','1960/08/26','EPS3',312698574,310456789,'alg5@pacientes.com'),
 						(753689,'Pacienteseis','Apellidoseis','1980/02/12','EPS1',312654987,310456789,'algo6@pacientes.com'),
-						(753214,'Pacientesiete','Apellidosiete','2002/04/30',null,312654987,310456789,'algo7@pacientes.com'), -- > null
+						(753214,'Pacientesiete','Apellidosiete','2002/04/30','Particular',312654987,310456789,'algo7@pacientes.com'), -- > null
 						(147896,'Pacienteocho','Apellidoocho','1999/07/29','EPS3',312654987,310456789,'algo8@pacientes.com'),
 						(365214,'Pacientenueve','Apellidonueve','2000/02/01','EPS1',312654987,310456789,'algo9@pacientes.com');						  
 												

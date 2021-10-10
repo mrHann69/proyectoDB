@@ -14,7 +14,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+import modelo.ExamenPendiente;
 import modelo.Orden;
+import modelo.modeloDAO.ExamenPDAO;
 import modelo.modeloDAO.OrdenDAO;
 
 
@@ -122,18 +125,24 @@ public class Control {
                 OrdenDAO oDAO = new OrdenDAO();
                 OPendientes.cargarOrdenes(oDAO.getAllOrdenes());
                 
-                for (Orden orden : oDAO.getAllOrdenes()){
-                    System.out.println("consecutivo "+orden.getConsecutivo());
-                }        
+//                for (Orden orden : oDAO.getAllOrdenes()){
+//                    System.out.println("consecutivo "+orden.getConsecutivo());
+//                }        
         }
         private void ExamenesPendientes() {
             EPendientes = new ExamenesPendientes();
                 EPendientes.setVisible(true);
+                EPendientes.addListenerBuscar(new EPendientesListener());
                 EPendientes.addListenerSalir(new EPendientesListener());
+//                for (ExamenPendiente EP:pdao.getAllPendientes("2021-03-17")){
+//                    System.out.println("nombre "+EP.getNombre());
+//                }
         }
         
         protected void Salir(){
             principal.dispose();
+            vistalogin.dispose();
+            System.exit(0);
         }
 
     }
@@ -164,7 +173,7 @@ public class Control {
         }
 
         protected void cancelar(){
-            ingOrden.dispose();
+            ingOrden.salir();
         }  
     }
     
@@ -183,7 +192,7 @@ public class Control {
             regPaciente.dispose();   
         }
         protected void cancelar(){
-            ingOrden.dispose();
+            regPaciente.salir();
         }  
     }
     
@@ -197,10 +206,10 @@ public class Control {
             }
         }
         private void aceptar(){
-            regPaciente.dispose();   
+            factu.salir();   
         }
         protected void cancelar(){
-            ingOrden.dispose();
+            factu.salir();
         }  
     }
     
@@ -219,13 +228,24 @@ public class Control {
     class EPendientesListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(e.getActionCommand().equalsIgnoreCase("Salir")){
+            if(e.getActionCommand().equalsIgnoreCase("Buscar")){
+                this.Buscar();
+            }else if(e.getActionCommand().equalsIgnoreCase("Salir")){
                 this.Salir();
+            }
+        }
+        protected void Buscar(){
+            String fecha = EPendientes.getTxtFecha().getText();
+            ExamenPDAO pdao = new ExamenPDAO();
+            if(fecha.isBlank()){
+                JOptionPane.showMessageDialog(EPendientes, "ingrese fecha valida - F: YYYY-MM-DD");
+            }else{
+                EPendientes.cargarExamenes(pdao.getAllPendientes(fecha));
             }
         }
         protected void Salir(){
             EPendientes.dispose();
-        }  
+        }
     }
     
     

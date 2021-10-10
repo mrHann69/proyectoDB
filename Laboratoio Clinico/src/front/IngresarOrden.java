@@ -249,7 +249,9 @@ public class IngresarOrden extends javax.swing.JFrame {
         this.txtNumeroOrden.setText("");
         this.txtFechaSolicitud.setText("");
     }
-    
+    public void salir(){
+        this.dispose();
+    }
     /**
      * @param args the command line arguments
      */

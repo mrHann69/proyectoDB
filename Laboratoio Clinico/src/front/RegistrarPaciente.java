@@ -298,6 +298,9 @@ public class RegistrarPaciente extends javax.swing.JFrame {
         this.txtTelefonoContacto.setText("");
         this.txtNumeroCelular.setText("");
     }
+    public void salir(){
+        this.dispose();
+    }
 
     /**
      * @param args the command line arguments

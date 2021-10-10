@@ -18,11 +18,12 @@ public class ExamenPDAO {
         ResultSet rs; 
         Connection conn;
         try {
+            examenes = new ArrayList<>();
             conn = services.Servicio.getConnection();
             psmt = conn.prepareStatement(sql);
             psmt.setDate(1, java.sql.Date.valueOf(LocalDate.parse(fecha)));
             rs = psmt.executeQuery();
-            ExamenPendiente ep = null;
+            ExamenPendiente ep;
             while(rs.next()){
                 ep = new ExamenPendiente(
                             rs.getInt("cedulapaciente"),
@@ -32,6 +33,9 @@ public class ExamenPDAO {
                             rs.getString("examen"),
                             rs.getDate("fechacita").toString());
                 examenes.add(ep);
+            }
+            if(examenes.isEmpty()){
+                System.out.println("array examenes vacio");
             }
         } catch (SQLException e) {
             System.out.println("Error ep: "+ e.getLocalizedMessage());
