@@ -13,9 +13,7 @@ import front.RegistrarPaciente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import modelo.Orden;
 import modelo.modeloDAO.OrdenDAO;
 
@@ -72,6 +70,7 @@ public class Control {
                 principal.addListenerFacturacion(new PrincipalListener());
                 principal.addListenerOrdenesPendientes(new PrincipalListener());
                 principal.addListenerExamenesPendientes(new PrincipalListener());
+                principal.addListenerSalir(new PrincipalListener());
         }
         protected void cancelar(){
             vistalogin.cancelar();
@@ -93,8 +92,8 @@ public class Control {
                 this.OrdenesPendientes();
             }else if(e.getActionCommand().equalsIgnoreCase("Examenes Pendientes")){
                 this.ExamenesPendientes();
-            }else if(e.getActionCommand().equalsIgnoreCase("X")){
-                this.cancelar();
+            }else if(e.getActionCommand().equalsIgnoreCase("Salir")){
+                this.Salir();
             }
         }
         private void ingresarOrden(){
@@ -125,15 +124,15 @@ public class Control {
                 
                 for (Orden orden : oDAO.getAllOrdenes()){
                     System.out.println("consecutivo "+orden.getConsecutivo());
-                }
-                
+                }        
         }
         private void ExamenesPendientes() {
             EPendientes = new ExamenesPendientes();
                 EPendientes.setVisible(true);
                 EPendientes.addListenerSalir(new EPendientesListener());
         }
-        protected void cancelar(){
+        
+        protected void Salir(){
             principal.dispose();
         }
 

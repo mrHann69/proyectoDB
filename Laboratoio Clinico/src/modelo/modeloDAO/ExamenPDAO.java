@@ -29,7 +29,7 @@ public class ExamenPDAO {
                             rs.getString("nombrepaciente"),
                             rs.getString("apellidopaciente"),
                             rs.getString("consecutivo"),
-                            rs.getString("tipoexamen"),
+                            rs.getString("examen"),
                             rs.getDate("fechacita").toString());
                 examenes.add(ep);
             }
