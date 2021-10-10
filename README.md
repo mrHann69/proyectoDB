@@ -1,3 +1,3 @@
 # proyectoDB
 ##MER
-![alt text](https://imgur.com/BB2wCeN)
+![Image text](https://imgur.com/BB2wCeN)
