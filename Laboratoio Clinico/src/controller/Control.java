@@ -1,12 +1,14 @@
 
 package controller;
 
+import front.ExamenesPendientes;
 import front.Facturacion;
 import front.Principal;
 import modelo.Login;
 import modelo.modeloDAO.LoginDAO;
 import front.login;
 import front.IngresarOrden;
+import front.OrdenesPendientes;
 import front.RegistrarPaciente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +24,8 @@ public class Control {
     protected IngresarOrden ingOrden;
     protected RegistrarPaciente regPaciente;
     protected Facturacion factu;
+    protected OrdenesPendientes OPendientes;
+    protected ExamenesPendientes EPendientes;
     
     protected void iniciarLogin(){
         this.vistalogin = new login();
@@ -81,13 +85,13 @@ public class Control {
             }else if(e.getActionCommand().equalsIgnoreCase("Registrar Paciente")){
                 this.registrarPaciente();
             }else if(e.getActionCommand().equalsIgnoreCase("Reportes")){
-                
+                   
             }else if(e.getActionCommand().equalsIgnoreCase("Facturacion")){
                 this.Facturacion();
             }else if(e.getActionCommand().equalsIgnoreCase("Ordenes Pendientes")){
-                
+                this.OrdenesPendientes();
             }else if(e.getActionCommand().equalsIgnoreCase("Examenes Pendientes")){
-                
+                this.ExamenesPendientes();
             }else if(e.getActionCommand().equalsIgnoreCase("X")){
                 this.cancelar();
             }
@@ -110,11 +114,20 @@ public class Control {
                 factu.addListenerAceptar(new FacturacionListener());
                 factu.addListenerCancelar(new FacturacionListener());
         }
+        private void OrdenesPendientes(){
+            OPendientes = new OrdenesPendientes();
+                OPendientes.setVisible(true);
+                OPendientes.addListenerSalir(new OPendientesListener());
+        }
+        private void ExamenesPendientes() {
+            EPendientes = new ExamenesPendientes();
+                EPendientes.setVisible(true);
+                EPendientes.addListenerSalir(new EPendientesListener());
+        }
         protected void cancelar(){
             principal.dispose();
         }  
-
-        
+  
     }
     
     class IngresarOrdenListener implements ActionListener{
@@ -182,4 +195,31 @@ public class Control {
             ingOrden.dispose();
         }  
     }
+    
+    class OPendientesListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getActionCommand().equalsIgnoreCase("Salir")){
+                this.Salir();
+            }
+        }
+        protected void Salir(){
+            OPendientes.dispose();
+        }  
+    }
+    
+    class EPendientesListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getActionCommand().equalsIgnoreCase("Salir")){
+                this.Salir();
+            }
+        }
+        protected void Salir(){
+            EPendientes.dispose();
+        }  
+    }
+    
+    
+    
 }
