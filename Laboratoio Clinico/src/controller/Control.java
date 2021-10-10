@@ -13,7 +13,9 @@ import front.RegistrarPaciente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import modelo.Orden;
 import modelo.modeloDAO.OrdenDAO;
 
@@ -79,13 +81,12 @@ public class Control {
     class PrincipalListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            
             if(e.getActionCommand().equalsIgnoreCase("Ingresar Orden")){
                 this.ingresarOrden();
             }else if(e.getActionCommand().equalsIgnoreCase("Registrar Paciente")){
                 this.registrarPaciente();
             }else if(e.getActionCommand().equalsIgnoreCase("Reportes")){
-                   
+                
             }else if(e.getActionCommand().equalsIgnoreCase("Facturacion")){
                 this.Facturacion();
             }else if(e.getActionCommand().equalsIgnoreCase("Ordenes Pendientes")){
@@ -118,6 +119,14 @@ public class Control {
             OPendientes = new OrdenesPendientes();
                 OPendientes.setVisible(true);
                 OPendientes.addListenerSalir(new OPendientesListener());
+                
+                OrdenDAO oDAO = new OrdenDAO();
+                OPendientes.cargarOrdenes(oDAO.getAllOrdenes());
+                
+                for (Orden orden : oDAO.getAllOrdenes()){
+                    System.out.println("consecutivo "+orden.getConsecutivo());
+                }
+                
         }
         private void ExamenesPendientes() {
             EPendientes = new ExamenesPendientes();
@@ -126,8 +135,8 @@ public class Control {
         }
         protected void cancelar(){
             principal.dispose();
-        }  
-  
+        }
+
     }
     
     class IngresarOrdenListener implements ActionListener{
@@ -141,14 +150,14 @@ public class Control {
             }
         }
         private void Aceptar(){
-//            Orden O = new Orden(ingOrden.getTxtConsecutivo().toString(),
-//                                Integer.parseInt(ingOrden.getTxtCedula().getText()),
-//                                LocalDate.parse(ingOrden.getTxtFechaSolicitud().getText()),
-//                                LocalDate.parse(ingOrden.getTxtFechaIngreso().getText()),
-//                                Integer.parseInt(ingOrden.getTxtMedicoTratante().getText()),
-//                                ingOrden.getTxtNumeroOrden().toString());
-//            OrdenDAO odao = new OrdenDAO();
-//            odao.insert(O);
+            Orden O = new Orden(ingOrden.getTxtConsecutivo().getText(),
+                                Integer.parseInt(ingOrden.getTxtCedula().getText()),
+                                LocalDate.parse(ingOrden.getTxtFechaSolicitud().getText()),
+                                LocalDate.parse(ingOrden.getTxtFechaIngreso().getText()),
+                                Integer.parseInt(ingOrden.getTxtMedicoTratante().getText()),
+                                ingOrden.getTxtNumeroOrden().getText());
+            OrdenDAO odao = new OrdenDAO();
+            odao.insert(O);
             System.out.println(LocalDate.parse(ingOrden.getTxtFechaSolicitud().getText()));
             System.out.println(LocalDate.parse(ingOrden.getTxtFechaIngreso().getText()));
                 JOptionPane.showMessageDialog(null, "Orden Ingresada");

@@ -19,13 +19,13 @@ public class PacienteDAO {
             con = Servicio.getConnection();
             String sql = "INSERT INTO Paciente VALUES (?,?,?,?,?,?,?,?)";
             pstm = con.prepareStatement(sql);
-            pstm.setInt(1, p.getCedula());
-            pstm.setString(2, p.getNombre());
-            pstm.setString(3,p.getApellido());
-            pstm.setDate(4, java.sql.Date.valueOf(p.getFechaNacimiento()) );
-            pstm.setString(5,p.getPOS());
-            pstm.setString(6,p.getTelefonoContacto());
-            pstm.setString(7,p.getCedulaContacto());                                 
+                pstm.setInt(1, p.getCedula());
+                pstm.setString(2, p.getNombre());
+                pstm.setString(3,p.getApellido());
+                pstm.setDate(4, java.sql.Date.valueOf(p.getFechaNacimiento()) );
+                pstm.setString(5,p.getPOS());
+                pstm.setString(6,p.getTelefonoContacto());
+                pstm.setString(7,p.getCedulaContacto());                                 
             rtdo = pstm.executeUpdate();  
         }
         catch(SQLException ex){

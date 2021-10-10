@@ -2,7 +2,9 @@
 package front;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class ExamenesPendientes extends javax.swing.JFrame {
 
@@ -50,9 +52,17 @@ public class ExamenesPendientes extends javax.swing.JFrame {
 
             },
             new String [] {
-
+                "Cedula", "nombre", "apellido", "consecutivo", "tipo examen", "fecha"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tableExamenesPendientes);
 
         lblEPendientes.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
@@ -160,7 +170,21 @@ public class ExamenesPendientes extends javax.swing.JFrame {
     public void setTableExamenesPendientes(JTable tableExamenesPendientes) {
         this.tableExamenesPendientes = tableExamenesPendientes;
     }
-    
+    public void cargarExamenes(ArrayList<modelo.ExamenPendiente> listadoExamenes){
+        DefaultTableModel modelo;
+        modelo = (DefaultTableModel) tableExamenesPendientes.getModel();        
+        //limpiarListadoTabla();
+        for(int i= 0; i < listadoExamenes.size(); i++){
+              modelo.addRow(new Object[]{
+                listadoExamenes.get(i).getCedula(),
+                listadoExamenes.get(i).getNombre(),
+                listadoExamenes.get(i).getApellido(),
+                listadoExamenes.get(i).getConsecutivo(),
+                listadoExamenes.get(i).getExamen(),
+                listadoExamenes.get(i).getFechaCita()
+              });
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
     private javax.swing.JPanel jPanel1;

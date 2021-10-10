@@ -1,8 +1,10 @@
 package modelo.modeloDAO;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import modelo.Orden;
 import services.Servicio;
@@ -30,7 +32,7 @@ public class OrdenDAO {
             pstm.setString(6, om.getNumOrdenMed());
             rtdo = pstm.executeUpdate();
         } catch (SQLException ex) {
-            System.out.println("Error: " + ex.getLocalizedMessage());
+            System.out.println("Error ODAO: " + ex.getLocalizedMessage());
         } finally {
             try {
                 if (pstm != null) {
@@ -43,19 +45,30 @@ public class OrdenDAO {
         return rtdo;
     }
 
-    public ArrayList<Orden> getAllPacientes() {
-        ArrayList<Orden> todos = null;
+    public ArrayList<Orden> getAllOrdenes() {
+        ArrayList<Orden> ordenes = null;
         Connection conn = null;
         PreparedStatement psmt;
+        ResultSet rs = null;
         try {
-            todos = new ArrayList<>();
+            ordenes = new ArrayList<>();
             conn = Servicio.getConnection();
             String consulta = "SELECT * FROM Orden";
             psmt = conn.prepareStatement(consulta);
-            todos = (ArrayList<Orden>) psmt.executeQuery();
+            rs = psmt.executeQuery();
+            Orden O = null;
+            while(rs.next()){
+                O = new Orden(rs.getString("consecutivo"),
+                                rs.getInt("cedulapaciente"),
+                                LocalDate.parse(rs.getString("fechasolicitud")),
+                                LocalDate.parse(rs.getString("fechaingreso")),
+                                rs.getInt("cedulamedico"),
+                                rs.getString("numordenmed"));
+                ordenes.add(O);
+            }
         } catch (SQLException e) {
             System.out.println("Error: " + e.getLocalizedMessage());
         }
-        return todos;
+        return ordenes;
     }
 }

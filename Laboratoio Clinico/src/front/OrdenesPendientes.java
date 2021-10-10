@@ -2,7 +2,9 @@
 package front;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class OrdenesPendientes extends javax.swing.JFrame {
 
@@ -56,9 +58,17 @@ public class OrdenesPendientes extends javax.swing.JFrame {
 
             },
             new String [] {
-
+                "consecutivo", "cedulapaciente", "fechasolicitud", "fechaingreso", "cedulamedico", "numordenmed"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tableOrdenesPendientes);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -159,6 +169,21 @@ public class OrdenesPendientes extends javax.swing.JFrame {
         this.tableOrdenesPendientes = tableOrdenesPendientes;
     }
     
+    public void cargarOrdenes(ArrayList<modelo.Orden> listadoOrdenes){
+        DefaultTableModel modelo;
+        modelo = (DefaultTableModel) tableOrdenesPendientes.getModel();        
+        //limpiarListadoTabla();
+        for(int i= 0; i < listadoOrdenes.size(); i++){
+              modelo.addRow(new Object[]{
+              listadoOrdenes.get(i).getConsecutivo(),
+              listadoOrdenes.get(i).getCedulaPaciente(),
+              listadoOrdenes.get(i).getFechaSolicitud(),
+              listadoOrdenes.get(i).getFechaIngreso(),
+              listadoOrdenes.get(i).getCedulaMedico(),
+              listadoOrdenes.get(i).getNumOrdenMed()           
+              });
+        }
+    }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
