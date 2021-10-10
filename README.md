@@ -14,28 +14,28 @@ https://github.com/mrHann69
 
 <span class="badge">Diagrama MER</span>
 
-![diagrama MER]("imgs/Database.jpeg")
+![diagrama MER](imgs/Database.jpeg)
 
 <span class="badge">login</span>
 
-![login]("imgs/login.jpeg")
+![login](imgs/login.jpeg)
 
 <span class="badge">principal</span>
 
-![principal]("imgs/login.jpeg")
+![principal](imgs/principal.jpeg)
 
 <span class="badge">ingresar orden</span>
 
-![ingresar orden]("imgs/login.jpeg")
+![ingresar orden](imgs/ingOrden.jpeg)
 
 <span class="badge">registrar paciente</span>
 
-![registrar paciente]("imgs/login.jpeg")
+![registrar paciente](imgs/regPaciente.jpeg)
 
 <span class="badge">ordenes pendientes</span>
 
-![ordenes pendientes]("imgs/login.jpeg")
+![ordenes pendientes](imgs/ordenesp.jpeg)
 
 <span class="badge">examenes pendientes</span>
 
-![examenes pendientes]("/imgs/login.jpeg")
+![examenes pendientes](imgs/examenesp.jpeg)
